@@ -8,8 +8,9 @@ type taskType = {
 type todolistPropsType = {
     title: string
     tasks: taskType[]
+    date?: string
 }
-const Todolist = ({title, tasks}: todolistPropsType) => {
+const Todolist = ({title, tasks, date}: todolistPropsType) => {
     return (
         <div>
             <h3>{title}</h3>
@@ -35,6 +36,7 @@ const Todolist = ({title, tasks}: todolistPropsType) => {
                 <button>Active</button>
                 <button>Completed</button>
             </div>
+            <div>{date}</div>
         </div>
     );
 };
