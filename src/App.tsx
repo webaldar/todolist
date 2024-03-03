@@ -21,8 +21,8 @@ function App() {
     ]
     return (
         <div className="App">
-            <Todolist title={'What to learn'} task={tasks1}/>
-            <Todolist title={'Song'} task={tasks2}/>
+            <Todolist title={'What to learn'} tasks={tasks1}/>
+            <Todolist title={'Song'} tasks={tasks2}/>
 
         </div>
     );
