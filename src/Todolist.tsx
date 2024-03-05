@@ -1,10 +1,7 @@
 import React from 'react';
+import {taskType} from "./App";
 
-type taskType = {
-    id: number
-    title: string
-    isDone: boolean
-}
+
 type todolistPropsType = {
     title: string
     tasks: taskType[]

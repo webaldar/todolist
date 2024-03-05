@@ -3,7 +3,7 @@ import './App.css';
 import Todolist from './Todolist';
 
 
-type taskType = {
+export type taskType = {
     id: number
     title: string
     isDone: boolean
@@ -13,11 +13,14 @@ function App() {
         {id: 1, title: 'HTML CSS', isDone: true},
         {id: 2, title: 'JS', isDone: true},
         {id: 3, title: 'React', isDone: false},
+        {id: 4, title: 'Redux', isDone: false},
     ]
     const tasks2: Array<taskType> = [
         {id: 1, title: 'Wondeful', isDone: true},
         {id: 2, title: 'My song', isDone: false},
         {id: 3, title: 'Word of Tunder', isDone: false},
+        {id: 4, title: 'Redux', isDone: false},
+
     ]
     return (
         <div className="App">
