@@ -15,23 +15,66 @@ const Todolist = ({title, tasks, date}: todolistPropsType) => {
                 <input/>
                 <button>+</button>
             </div>
-            <ul>
-                {tasks.map(task =>{
-                    return (
-                        <li>
-                            <input type="checkbox" checked={task.isDone}/> <span>{task.title}</span>
+            {/*{tasks.length === 0 ? (*/}
+            {/*    <p>Нет заданий</p>*/}
+            {/*) : (*/}
+            {/*    <ul>*/}
+            {/*        {tasks.map(task => {*/}
+            {/*            return (*/}
+            {/*                <li key={task.id}>*/}
+            {/*                    <input type="checkbox" checked={task.isDone} />*/}
+            {/*                    <span>{task.title}</span>*/}
+            {/*                </li>*/}
+            {/*                )*/}
+
+            {/*        })}*/}
+            {/*    </ul>*/}
+            {/*)}*/}
+
+
+            {tasks.length === 0 ? (
+                <p>Нет заданий</p>
+            ) : (
+                <ul>
+                    {tasks.map(t => (
+                        <li key={t.id}>
+                            <input type="checkbox" checked={t.isDone} />
+                            <span>{t.title}</span>
                         </li>
-                    )
-                })}
-            </ul>
-            <div>
-                <button>All</button>
-                <button>Active</button>
-                <button>Completed</button>
-            </div>
-            <div>{date}</div>
-        </div>
-    );
+                    ))
+
+                    }
+                </ul>
+            )
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div>
+        <button>All</button>
+        <button>Active</button>
+        <button>Completed</button>
+    </div>
+    <div>{date}</div>
+</div>
+)
+    ;
 };
 
 export default Todolist;

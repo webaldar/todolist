@@ -14,14 +14,10 @@ function App() {
         {id: 2, title: 'JS', isDone: true},
         {id: 3, title: 'React', isDone: false},
         {id: 4, title: 'Redux', isDone: false},
+        {id: 5, title: 'RTK Query', isDone: true},
+        {id: 6, title: 'JQuery', isDone: false},
     ]
-    const tasks2: Array<taskType> = [
-        {id: 1, title: 'Wondeful', isDone: true},
-        {id: 2, title: 'My song', isDone: false},
-        {id: 3, title: 'Word of Tunder', isDone: false},
-        {id: 4, title: 'Redux', isDone: false},
-
-    ]
+    const tasks2: Array<taskType> = []
     return (
         <div className="App">
             <Todolist title={'What to learn'} tasks={tasks1} date={'20.02.2024'}/>
