@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Todolist from './Todolist';
+import Todolist from './component/Todolist';
 
 
 export type taskType = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import {taskType} from "./App";
+import {taskType} from "../App";
 import {Button} from "./Button";
 
 
