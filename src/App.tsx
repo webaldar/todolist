@@ -17,12 +17,11 @@ function App() {
         {id: 5, title: 'RTK Query', isDone: true},
         {id: 6, title: 'JQuery', isDone: false},
     ]
-    const tasks2: Array<taskType> = []
+
+
     return (
         <div className="App">
             <Todolist title={'What to learn'} tasks={tasks1} date={'20.02.2024'}/>
-            <Todolist title={'Song'} tasks={tasks2}/>
-
         </div>
     );
 }
