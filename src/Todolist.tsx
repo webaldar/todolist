@@ -1,5 +1,6 @@
 import React from 'react';
 import {taskType} from "./App";
+import {Button} from "./Button";
 
 
 type todolistPropsType = {
@@ -35,9 +36,9 @@ const Todolist = ({title, tasks, date}: todolistPropsType) => {
 
 
             <div>
-                <button>All</button>
-                <button>Active</button>
-                <button>Completed</button>
+                <Button title={'All'}/>
+                <Button title={'Active'}/>
+                <Button title={'Completed'}/>
             </div>
             <div>{date}</div>
         </div>
