@@ -18,10 +18,13 @@ function App() {
         {id: 6, title: 'JQuery', isDone: false},
     ]
 
+    function removeTask (taskId: number) {
+        console.log(taskId);
+    }
 
     return (
         <div className="App">
-            <Todolist title={'What to learn'} tasks={tasks1} date={'20.02.2024'}/>
+            <Todolist title={'What to learn'} tasks={tasks1} date={'20.02.2024'} removeTask={removeTask}/>
         </div>
     );
 }

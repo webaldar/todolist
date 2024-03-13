@@ -7,8 +7,9 @@ type todolistPropsType = {
     title: string
     tasks: taskType[]
     date?: string
+    removeTask: (taskId: number) => void
 }
-const Todolist = ({title, tasks, date}: todolistPropsType) => {
+const Todolist = ({title, tasks, date, removeTask}: todolistPropsType) => {
     return (
         <div>
             <h3>{title}</h3>
@@ -25,6 +26,7 @@ const Todolist = ({title, tasks, date}: todolistPropsType) => {
                         <li key={t.id}>
                             <input type="checkbox" checked={t.isDone}/>
                             <span>{t.title}</span>
+                            <button onClick={() => removeTask(t.id)}>x</button>
                         </li>
                     ))
 
