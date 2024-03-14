@@ -18,6 +18,15 @@ function App() {
         {id: 6, title: 'JQuery', isDone: false},
     ])
 
+    const [filter, setFilter] = useState('All')
+    let tasksForTodolist = tasks
+    if (filter === 'Active'){
+        tasksForTodolist = tasks.filter(tasks => tasks.isDone === false)
+    }
+    if (filter === 'Completed'){
+        tasksForTodolist = tasks.filter(tasks => tasks.isDone === true)
+    }
+
     const removeTask = (taskId: number) => {
         const filteredTasks = tasks.filter(task => {
             return task.id !== taskId
@@ -27,7 +36,7 @@ function App() {
 
     return (
         <div className="App">
-            <Todolist title={'What to learn'} tasks={tasks}  removeTask={removeTask}/>
+            <Todolist title={'What to learn'} tasks={tasksForTodolist}  removeTask={removeTask}/>
         </div>
     );
 }
