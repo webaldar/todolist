@@ -8,6 +8,9 @@ export type taskType = {
     title: string
     isDone: boolean
 }
+
+export type filterValueType = 'All' | 'Active' | 'Completed'
+
 function App() {
     const [tasks, setTasks] = useState<taskType[]>([
         {id: 1, title: 'HTML CSS', isDone: true},
@@ -18,13 +21,16 @@ function App() {
         {id: 6, title: 'JQuery', isDone: false},
     ])
 
-    const [filter, setFilter] = useState('All')
+
+
+    const [filter, setFilter] = useState<filterValueType>('All')
+
     let tasksForTodolist = tasks
-    if (filter === 'Active'){
-        tasksForTodolist = tasks.filter(tasks => tasks.isDone === false)
+    if (filter === 'Active') {
+        tasksForTodolist = tasks.filter(tasks => !tasks.isDone)
     }
-    if (filter === 'Completed'){
-        tasksForTodolist = tasks.filter(tasks => tasks.isDone === true)
+    if (filter === 'Completed') {
+        tasksForTodolist = tasks.filter(tasks => tasks.isDone)
     }
 
     const removeTask = (taskId: number) => {
@@ -34,9 +40,13 @@ function App() {
         setTasks(filteredTasks)
     }
 
+    const changeFilter = (filter: filterValueType) => {
+        setFilter(filter)
+    }
+
     return (
         <div className="App">
-            <Todolist title={'What to learn'} tasks={tasksForTodolist}  removeTask={removeTask}/>
+            <Todolist title={'What to learn'} tasks={tasksForTodolist} removeTask={removeTask} changeFilter={changeFilter}/>
         </div>
     );
 }
