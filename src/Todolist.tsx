@@ -1,4 +1,5 @@
 import React from 'react';
+
 type TodolistType = {
     title: string
     tasks: Array<TaskType>
@@ -9,9 +10,16 @@ export type TaskType = {
     title: string
     isDone: boolean
 }
-export const Todolist = (props: TodolistType) => {
-    const title = props.title;
-    const tasks = props.tasks;
+export const Todolist = ({title, tasks}: TodolistType) => {
+    //const title = title;
+    // const tasks = props.tasks;
+    // const tasksList: Array<JSX.Element> = [];
+    // for (let i = 0; i < tasks.length; i++) {
+    //     tasksList.push(
+    //         <li><input type="checkbox" checked={tasks[i].isDone}/> <span>{tasks[i].title}</span></li>
+    //     )
+    // }
+
     return (
         <div className="todolist">
             <h3>{title}</h3>
@@ -20,9 +28,13 @@ export const Todolist = (props: TodolistType) => {
                 <button>+</button>
             </div>
             <ul>
-                <li><input type="checkbox" checked={tasks[0].isDone}/> <span>{tasks[0].title}</span></li>
-                <li><input type="checkbox" checked={tasks[1].isDone}/> <span>{tasks[1].title}</span></li>
-                <li><input type="checkbox" checked={tasks[2].isDone}/> <span>{tasks[2].title}</span></li>
+                {
+                    tasks.map(task =>
+                        <li>
+                            <input type="checkbox" checked={task.isDone}/>
+                            <span>{task.title}</span>
+                        </li>)
+                }
             </ul>
             <div>
                 <button>All</button>
